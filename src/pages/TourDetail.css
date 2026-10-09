@@ -1,0 +1,67 @@
+/* Tour detail page additions — import from TourDetail.jsx */
+.tour-detail-page { overflow: hidden; }
+.detail-hero--gallery { position: relative; }
+.detail-hero-caption {
+  position: absolute;
+  z-index: 2;
+  right: max(24px, calc((100vw - 1180px) / 2));
+  bottom: 28px;
+  color: #fff;
+  text-decoration: none;
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.detail-hero-caption span { font-size: 1.2rem; }
+.detail-intro-section { padding-top: clamp(64px, 8vw, 112px); padding-bottom: clamp(64px, 8vw, 112px); }
+.detail-intro-copy { max-width: 680px; }
+.detail-place-overview { max-width: 650px; color: #68716a; line-height: 1.85; margin: 20px 0; }
+.detail-card-divider { height: 1px; background: rgba(18,57,43,.14); margin: 20px 0; }
+.detail-card-link { display: inline-block; margin-top: 20px; color: #12392b; font-weight: 700; text-decoration: none; }
+.detail-section-heading { display: flex; justify-content: space-between; align-items: end; gap: 48px; margin-bottom: 38px; }
+.detail-section-note { max-width: 390px; color: #737a73; line-height: 1.8; margin: 0 0 6px; }
+.detail-highlights-section { padding: clamp(64px, 8vw, 104px) 0; background: #f4f0e7; }
+.detail-highlights-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.detail-highlight { background: #fbfaf6; padding: 28px; min-height: 220px; border: 1px solid rgba(18,57,43,.09); }
+.detail-highlight-number { display: block; color: #b18b4e; font-size: .75rem; letter-spacing: .16em; margin-bottom: 34px; }
+.detail-highlight h3 { color: #12392b; font-family: "Playfair Display", Georgia, serif; font-size: 1.45rem; font-weight: 500; margin: 0 0 12px; }
+.detail-highlight p { color: #6d756e; font-size: .94rem; line-height: 1.75; margin: 0; }
+.detail-gallery-section { padding-top: clamp(64px, 8vw, 104px); padding-bottom: clamp(64px, 8vw, 104px); }
+.detail-gallery-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr; grid-template-rows: 230px 230px; gap: 14px; }
+.detail-gallery-item { position: relative; display: block; overflow: hidden; background: #e8e4da; color: #fff; min-height: 190px; text-decoration: none; }
+.detail-gallery-item--1 { grid-row: span 2; }
+.detail-gallery-item img { width: 100%; height: 100%; min-height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
+.detail-gallery-item:hover img { transform: scale(1.045); }
+.detail-gallery-item::after { content: ""; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.58)); pointer-events: none; }
+.detail-gallery-caption { position: absolute; z-index: 1; left: 18px; right: 45px; bottom: 17px; font-size: .85rem; letter-spacing: .02em; }
+.detail-gallery-expand { position: absolute; z-index: 1; right: 16px; bottom: 14px; font-size: 1.1rem; }
+.detail-image-note { color: #8a8d85; font-size: .78rem; line-height: 1.6; margin: 16px 0 0; }
+.detail-dark-note { color: rgba(255,255,255,.66); line-height: 1.8; max-width: 360px; margin-top: 24px; }
+.detail-practical-section { padding-top: clamp(64px, 8vw, 104px); padding-bottom: clamp(64px, 8vw, 104px); }
+.detail-practical-fact { margin-top: 30px; max-width: 450px; }
+.detail-practical-fact > span { color: #a17d42; font-size: .7rem; letter-spacing: .15em; font-weight: 700; }
+.detail-practical-fact p, .detail-practical-fact li { color: #69736b; line-height: 1.8; }
+.detail-practical-fact ul { padding-left: 19px; }
+.detail-cta-copy { color: rgba(255,255,255,.75); max-width: 440px; line-height: 1.8; margin: 20px 0 28px; }
+
+@media (max-width: 760px) {
+  .detail-section-heading { display: block; }
+  .detail-section-note { margin-top: 18px; }
+  .detail-highlights-grid { grid-template-columns: 1fr; }
+  .detail-highlight { min-height: 0; }
+  .detail-highlight-number { margin-bottom: 20px; }
+  .detail-gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 170px 170px; gap: 9px; }
+  .detail-gallery-item--1 { grid-column: span 2; grid-row: auto; }
+  .detail-gallery-caption { left: 12px; bottom: 12px; font-size: .76rem; }
+  .detail-gallery-expand { right: 10px; bottom: 9px; }
+  .detail-hero-caption { right: 20px; bottom: 18px; font-size: .68rem; }
+}
+@media (max-width: 420px) {
+  .detail-gallery-grid { grid-template-rows: 190px 145px 145px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .detail-gallery-item img { transition: none; }
+}

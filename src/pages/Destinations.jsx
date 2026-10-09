@@ -1,0 +1,8 @@
+import { Link } from "react-router-dom";
+import PageShell from "../components/PageShell";
+import { destinations } from "../data";
+export default function Destinations(){return <PageShell darkHeader><main>
+ <section className="page-hero page-hero-dest"><div className="hero-shade"/><div className="container page-hero-content"><p className="eyebrow light">WHERE THE LAND LEADS</p><h1 className="display light">A country of<br/><em>many moods.</em></h1></div></section>
+ <section className="section"><div className="container"><div className="section-intro"><p className="eyebrow">THE MAP, REIMAGINED</p><h2 className="heading">Four places.<br/><em>Endless ways in.</em></h2><p>Rwanda is small enough to cross in a day, yet every region feels different. Choose a landscape, a feeling or a question — then go.</p></div><div className="destination-grid">{destinations.map((d,i)=><Link key={d.id} className={`destination-card ${i===0||i===3?"wide":""}`} to={`/destinations/${d.id}`}><img src={d.image} alt={d.title}/><div><span>{String(i+1).padStart(2,"0")} · {d.region}</span><h3>{d.title}</h3><p>{d.description}</p><b>Explore destination ↗</b></div></Link>)}</div></div></section>
+ <section className="dark-section section"><div className="container centered-copy"><p className="eyebrow gold">THE BEST PART?</p><h2 className="heading light">You don't have to<br/><em>choose just one.</em></h2><p className="light-muted">A carefully designed route can connect mountains, savannah, forest and lake without turning your holiday into a race.</p><Link className="button button-gold" to="/contact">Design my route <span>↗</span></Link></div></section>
+ </main></PageShell>}
