@@ -192,3 +192,4 @@ export const interests = [
   "Nyungwe & forest",
   "A little of everything"
 ];
+

@@ -40,8 +40,8 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .brand{display:flex;align-items:baseline;gap:5px;font-family:'Playfair Display',serif;font-size:23px;letter-spacing:-.6px;white-space:nowrap}
 .brand span{font-weight:500; padding-bottom: 5px;}.brand b{font-weight:700}.brand small{font:700 8px 'DM Sans';letter-spacing:2px;color:var(--gold);align-self:center;margin-left:2px}
 .main-nav{display:flex;align-items:center;gap:27px;font-size:19px;font-weight:600}
-.main-nav>a:not(.nav-cta){opacity:.82;transition:.2s}.main-nav>a:hover,.main-nav>a.active{opacity:1;color:var(--gold)}
-.nav-cta{background:#fff;color:var(--forest);padding:12px 17px;display:flex;gap:8px;transition:.2s}.nav-cta:hover{transform:translateY(-2px)}
+.main-nav>a:not(.nav-cta){opacity:.82;transition:.2s,}.main-nav>a:hover,.main-nav>a.active{opacity:1;color:var(--gold)}
+.nav-cta{background:var(--forest);color:#fff;padding:12px 17px;display:flex;gap:8px;transition:.2s}.nav-cta:hover{transform:translateY(-2px)}
 .site-header.dark-header .nav-cta{color:#fff;background:var(--forest)}
 .nav-toggle{display:none;background:none;border:0;color:currentColor;padding:15px}.nav-toggle span{display:block;width:26px;height:2px;background:currentColor;margin:6px}
 
@@ -142,6 +142,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
   .split,.experience-grid,.tour-row,.tour-row.reverse,.featured-post,.contact-hero-grid{grid-template-columns:1fr;gap:45px}.tour-row.reverse .tour-row-image{order:0}.image-frame.tall,.image-frame.portrait,.editorial-image,.tour-row-image{height:470px}.journey-grid{grid-template-columns:1fr;grid-template-rows:repeat(3,340px)}.journey-card.large{grid-row:auto}.section-top{align-items:flex-start;flex-direction:column}.article-grid{grid-template-columns:1fr 1fr}.destination-grid{grid-template-columns:1fr}.destination-card.wide{grid-column:auto;height:450px}.destination-card{height:450px}.values-grid{grid-template-columns:1fr 1fr}.footer-main{grid-template-columns:1fr 1fr}.display{letter-spacing:-2px}.page-hero{height:500px}.contact-hero{padding-top:75px}.booking-form{padding:30px}.story-stats{grid-template-columns:1fr}.story-stats div{border-right:0;border-bottom:1px solid var(--line)}.filters{justify-content:flex-start}
 }
 @media(max-width:560px){
+.site-header.dark-header .nav-cta{color:var(--gold-light);background:var(--forest)}
   .announcement{font-size:7px;padding:0 10px}.hero{min-height:calc(100vh - 32px)}.hero-inner{padding-top:60px}.display{font-size:55px}.heading{font-size:43px}.hero-actions{align-items:flex-start;flex-direction:column}.scroll-cue,.hero-note{display:none}.section{padding:78px 0}.image-frame.tall,.image-frame.portrait,.editorial-image,.tour-row-image{height:390px}.journey-grid{grid-template-rows:320px 320px 320px}.journey-info h3{font-size:29px}.values-grid,.footer-main,.contact-details,.form-two,.article-grid{grid-template-columns:1fr}.footer-main{gap:32px}.footer-bottom{flex-direction:column;gap:8px}.page-hero{height:440px}.page-hero-content{padding-bottom:45px}.tour-meta{flex-direction:column;gap:8px}.featured-post{margin-bottom:65px}.featured-post-image{height:400px}.filter-bar{align-items:flex-start;flex-direction:column}.filters{width:100%}.filters select{flex:1;min-width:100%}.filter{flex:1}.booking-form{padding:23px}.checkout-actions{flex-direction:column}.receipt-row{align-items:flex-start;flex-direction:column;gap:4px}.receipt-row strong{text-align:left}.payment-content{align-items:flex-start}.payment-logos{display:none}
 }
 
