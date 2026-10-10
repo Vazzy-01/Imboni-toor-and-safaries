@@ -4,16 +4,14 @@ import PageShell from "../components/PageShell";
 import { interests, tours } from "../data";
 import Countrycode from "./countycode";
 
-const ENDPOINT = import.meta.env.VITE_BOOKING_ENDPOINT || "https://script.google.com/macros/s/AKfycbxAXNIJ5y2YhsZkyzz-5e7y2-iDK8bJMgLy3xeuxNEOIjRHzQg0rD2SesG3O538S7c_/exec";
+const ENDPOINT = import.meta.env.VITE_BOOKING_ENDPOINT || "https://script.google.com/macros/s/AKfycbznp1pkQsDbfoFoGGb-AV4Ts8315Aga-yfH7UWC15g0zZaBPcYCp7eHYdUw3DeeOxk4/exec";
 const today = new Date().toISOString().split("T")[0];
 
 const defaultForm = {
   name: "",
-  email: "",
-  phone: "",
   countryCode: "+250",
   date: "",
-  travellers: "2 travellers",
+  travel: "1 travellers",
   interest: "Choose a direction",
   journey: "",
   message: ""

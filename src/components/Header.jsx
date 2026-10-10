@@ -23,7 +23,7 @@ export default function Header({ dark=false }) {
   },[]);
 
   return <>
-    <div className="announcement">Private journeys • Local guides • Thoughtful travel across Rwanda</div>
+    <div className="announcement" >Private journeys • Local guides • Thoughtful travel across Rwanda</div>
     <header className={`site-header ${dark ? "dark-header":""}`} id="siteHeader">
       
       <Link className="brand" to="/"><img src={reactLogo} alt="logo" className="logo"/></Link>
