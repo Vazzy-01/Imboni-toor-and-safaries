@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import flyer from "../assets/flyer.jpeg";
-import "./Popupstyle.css";
+import "./popupstyle.css";
 
 export default function popup() {
   const [visible, setVisible] = useState(true);
