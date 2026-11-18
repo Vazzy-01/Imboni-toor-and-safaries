@@ -17,7 +17,6 @@ export default function Home(){
       <Reveal className="delay-3"><div className="hero-actions"><Link className="button button-gold" to="/tours">Explore journeys <span>→</span></Link><a className="text-button light" href="#story">Why IMBONI roots <span>↓</span></a></div></Reveal>
     </div>
     <div className="hero-note"><span>01</span><i></i><span>04</span></div>
-    <callus/>
     
    </section>
 
@@ -34,7 +33,6 @@ export default function Home(){
       <Reveal className="section-copy delay-1"><p className="eyebrow">A DIFFERENT KIND OF TRAVEL</p><h2 className="heading">More than a destination.<br/><em>A feeling.</em></h2><p>Rwanda is not simply somewhere you visit. It is a place you experience slowly — through a shared meal, a mountain trail, a conversation, a quiet lake and the rhythm of everyday life.</p><p>We create intimate journeys that connect you with the landscapes and people that make Rwanda extraordinary.</p><Link className="arrow-link" to="/about">Discover our story <span>↗</span></Link></Reveal>
     </div>
    </section>
-    <callus/>
    <section className="section dark-section featured"><div className="container">
     <div className="section-top"><div><p className="eyebrow gold">CURATED JOURNEYS</p><h2 className="heading light">Go where the<br/><em>story leads.</em></h2></div><Link className="arrow-link light" to="/tours">View all journeys <span>↗</span></Link></div>
     <div className="journey-grid">
