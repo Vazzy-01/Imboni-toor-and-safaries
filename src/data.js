@@ -1,3 +1,4 @@
+import sabyivid from "./assets/video/sabyinyovid.mp4"
 export const IMG = {
   hills: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1600&q=85",
   greenHills: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1400&q=85",
@@ -15,8 +16,27 @@ export const IMG = {
   wildlife: "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1400&q=85",
   lake: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
   water: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt10ikTNdtvwDpTvUrAcVbkAlVDw5x2BlS-rHdSiUMpQ&s=10",
-  city: "https://deih43ym53wif.cloudfront.net/cityscape-things-to-do-in-kigali-rwanda_44e57bd0bf.jpeg"
+  city: "https://deih43ym53wif.cloudfront.net/cityscape-things-to-do-in-kigali-rwanda_44e57bd0bf.jpeg",
+ 
 };
+export const videos={
+  sabyinyo:sabyivid
+}
+const allImages = import.meta.glob(
+  "./assets/images/*.{png,jpg,jpeg,webp}",
+  {
+    eager: true,
+    import: "default"
+  }
+);
+
+export const sabyImg = Object.entries(allImages)
+  .filter(([path]) => path.toLowerCase().includes("sabyiny"))
+  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+  .map(([path, src]) => ({
+    name: path.split("/").pop(),
+    src
+  }));
 
 export const tours = [
   {
@@ -176,10 +196,10 @@ export const destinations = [
   { id: "nyungwe", title: "Nyungwe", region: "SOUTH-WEST", image: IMG.nyungwe, description: "Ancient forest, canopy walks and deep green.", detail: "Nyungwe offers dense rainforest, trails and a quieter sense of adventure for travellers who want to go deeper into nature.", tours: [] }
 ];
 
+  
 export const journalPosts = [
-  { slug: "slower-kigali", category: "KIGALI", number: "01", title: "A slower way to see the city.", image: IMG.kigali, excerpt: "Kigali rewards the traveller who leaves some space in the day. Walk a little farther. Sit a little longer.", body: ["Kigali is easiest to understand when you leave some space between the landmarks. The city is made of neighbourhoods, cafés, galleries, markets and everyday moments that are easy to miss when a schedule is too full.", "A slower day might mean starting with coffee, walking through a local neighbourhood, visiting an art space and leaving the afternoon open. The point is not to see everything. It is to notice more."] },
+  { slug: "hills-change-everything", category: "LANDSCAPE", number: "01", title: "Visit to Sabyinyo volcano", image: sabyImg[0].src, excerpt: "Sunday, 15 November 2026", body: ["Rwanda's hills are more than scenery. They influence roads, farming, viewpoints and the pace of a journey.", "That is why a good itinerary leaves room for the road itself. A short distance on a map can become a beautiful part of the experience when the route is designed with time to stop and look."],images:sabyImg, video: videos.sabyinyo},
   { slug: "five-flavors", category: "CULTURE", number: "02", title: "Five flavors that feel like home", image: IMG.food, excerpt: "Food is memory, hospitality and geography on one plate.", body: ["Rwandan food is deeply connected to place and hospitality. A meal can be a way into a conversation, a family story or a local routine.", "When planning a food-focused day, we prefer a mix of familiar staples and opportunities to taste something you have never tried before. Ask questions, eat slowly and let the meal become part of the journey."] },
-  { slug: "hills-change-everything", category: "LANDSCAPE", number: "03", title: "Why the hills change everything", image: IMG.kivu, excerpt: "The terrain shapes routes, routines and the way communities connect.", body: ["Rwanda's hills are more than scenery. They influence roads, farming, viewpoints and the pace of a journey.", "That is why a good itinerary leaves room for the road itself. A short distance on a map can become a beautiful part of the experience when the route is designed with time to stop and look."] },
   { slug: "into-the-green", category: "NATURE", number: "04", title: "Into the green", image: IMG.nyungwe, excerpt: "A quiet introduction to Rwanda's deep forests and the life within them.", body: ["Forest travel rewards patience. The deeper you go, the more the journey becomes about sounds, textures, trails and small discoveries.", "For travellers heading into Rwanda's forests, comfortable pacing and good local guidance make the experience more enjoyable and responsible."] }
 ];
 

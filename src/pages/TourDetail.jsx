@@ -24,6 +24,17 @@ export default function TourDetail() {
   }
 
   const enquiryUrl = `/contact?interest=${encodeURIComponent(tour.interest)}&journey=${encodeURIComponent(tour.title)}`;
+  const currencyCode = typeof tour.currency === "string"
+    ? tour.currency
+    : tour.currencyCode || tour.currency?.code || "USD";
+  const price = tour.price ?? tour.usd;
+  const formattedPrice = Number.isFinite(price)
+    ? new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: currencyCode,
+        maximumFractionDigits: 0,
+      }).format(price)
+    : price;
 
   return (
     <PageShell darkHeader>

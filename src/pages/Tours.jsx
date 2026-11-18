@@ -26,10 +26,9 @@ export default function Tours(){
  const [params,setParams]=useSearchParams();
  const [filter,setFilter]=useState(params.get("category")||"all");
  const [currency,setCurrency]=useState("USD");
- const [rate,setRate]=useState(null); const [rateError,setRateError]=useState("");
  useEffect(()=>setParams(p=>{if(filter==="all")p.delete("category");else p.set("category",filter);return p},{replace:true}),[filter]);
  const visible=useMemo(()=>tours.filter(t=>filter==="all"||t.category===filter),[filter]);
- const price=t=>currency==="USD"?`$${t.usd.toLocaleString()}`:rate?`${Math.round(t.usd*rate).toLocaleString()} ${currency}`:"Loading…";
+ const price=t=>`${currencySymbols[currency]}${Math.round(t.usd*exchangeRates[currency]).toLocaleString()}`;
  return <PageShell darkHeader><main>
   <section className="page-hero page-hero-tours"><div className="hero-shade"/><div className="container page-hero-content"><p className="eyebrow light">CURATED EXPERIENCES</p><h1 className="display light">Journeys with<br/><em>room to breathe.</em></h1><p className="hero-copy light">Choose a direction, then let us shape the details around your dates, pace and interests.</p></div></section>
   <section className="section"><div className="container">

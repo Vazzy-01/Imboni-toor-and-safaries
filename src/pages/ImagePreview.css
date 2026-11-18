@@ -1,0 +1,179 @@
+
+/* IMAGE CARD */
+
+.gallery-image-card {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #e8e8e8;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.gallery-image-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-image-card:hover .gallery-thumbnail {
+  transform: scale(1.08);
+}
+
+/* IMAGE OVERLAY */
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-image-card:hover .image-overlay {
+  opacity: 1;
+}
+
+.image-overlay button,
+.download-image {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 30px;
+  background: #fff;
+  color: #183b32;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.image-overlay button:hover,
+.download-image:hover {
+  background: #d6a84f;
+  color: white;
+}
+
+.image-overlay i {
+  margin-right: 7px;
+}
+
+/* FULLSCREEN PREVIEW */
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background: rgba(0, 0, 0, 0.94);
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox-image {
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 10px;
+  animation: zoomIn 0.35s ease;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 45px;
+  cursor: pointer;
+}
+
+.lightbox-download {
+  position: absolute;
+  top: 30px;
+  left: 35px;
+  padding: 12px 20px;
+  background: #d6a84f;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.lightbox-download:hover {
+  background: #183b32;
+}
+
+.lightbox-download i {
+  margin-right: 8px;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .gallery-image-card {
+    height: 220px;
+  }
+
+  .image-lightbox {
+    padding: 15px;
+  }
+
+  .lightbox-image {
+    max-width: 100%;
+    max-height: 75vh;
+  }
+
+  .lightbox-close {
+    top: 10px;
+    right: 15px;
+  }
+
+  .lightbox-download {
+    top: 18px;
+    left: 15px;
+  }
+
+  .image-overlay {
+    opacity: 1;
+    background: linear-gradient(
+      transparent 50%,
+      rgba(0, 0, 0, 0.4)
+    );
+  }
+}
