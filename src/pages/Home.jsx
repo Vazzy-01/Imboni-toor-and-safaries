@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell";
 import Reveal from "../components/Reveal";
 import { IMG } from "../data";
-import Popup from "./popup"
+import Popup from "./popup.jsx";
 
 export default function Home(){
  return <PageShell>
